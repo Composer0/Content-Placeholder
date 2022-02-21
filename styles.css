@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ecf0f1;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+footer {
+    color: slategray;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 30px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 350px;
+    /* width instantly changes card shape if image size is the problem. not always necessary. */
+}
+
+.card-header {
+    height: 200px;
+}
+
+.card-header img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%
+}
+
+.card-content {
+    background-color: #fff;
+    padding: 30px;
+    /* padding necessary to remove gray space. */
+}
+
+.card-title {
+    height: 20px;
+    /* closer to paragraph */
+    margin: 0;
+    /* closer to img */
+}
+
+.card-excerpt {
+    color: #777;
+    margin: 10px 0 20px;
+}
+
+.author {
+    display: flex;
+    /* puts author name beside img rather than underneath. Flex puts everything within the class horizontally aligned. */
+}
+
+.profile-img {
+    border-radius: 50%;
+    /* makes circle for image */
+    overflow: hidden;
+    /* crops the image if the image is still showing. */
+    height: 40px;
+    width: 40px;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    /* vertically align. Display has to be restated even if the parent is the same as well. A child must chose how to raise their children. */
+    justify-content: space-around;
+    /* creates gap between name and date. */
+    margin-left: 10px;
+    /* text away from image. */
+    width: 100px;
+}
+
+.author-info small {
+    color: #aaa;
+    margin-top: 5px;
+}
+
+.animated-bg {
+    background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 10%, #f6f7f8 20%, #f6f7f8 100%);
+    background-size: 200% 100%;
+    /* creates the three linear lines. */
+    animation: bgPos 1s linear infinite;
+}
+
+.animated-bg-text {
+    border-radius: 50px;
+    display: inline-block;
+    /* inline block is chosen so that we can customize the margin and height of the background image gradient otherwise it can't be seen. */
+    margin: 0;
+    height: 10px;
+    width: 100%;
+}
+
+@keyframes bgPos {
+    0% {
+        background-position: 50% 0;
+    }
+    100% {
+        background-position: -150% 0;
+    }
+}
